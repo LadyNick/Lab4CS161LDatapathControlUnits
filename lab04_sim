@@ -1,0 +1,43 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x56436c891df0 .scope module, "controlUnit" "controlUnit" 2 16;
+ .timescale 0 0;
+    .port_info 0 /INPUT 6 "instr_op";
+    .port_info 1 /OUTPUT 1 "reg_dst";
+    .port_info 2 /OUTPUT 1 "branch";
+    .port_info 3 /OUTPUT 1 "mem_read";
+    .port_info 4 /OUTPUT 1 "mem_to_reg";
+    .port_info 5 /OUTPUT 2 "alu_op";
+    .port_info 6 /OUTPUT 1 "mem_write";
+    .port_info 7 /OUTPUT 1 "alu_src";
+    .port_info 8 /OUTPUT 1 "reg_write";
+o0x7f5f671e0018 .functor BUFZ 2, C4<zz>; HiZ drive
+v0x56436c893350_0 .net "alu_op", 1 0, o0x7f5f671e0018;  0 drivers
+o0x7f5f671e0048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56436c8937b0_0 .net "alu_src", 0 0, o0x7f5f671e0048;  0 drivers
+o0x7f5f671e0078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56436c893ba0_0 .net "branch", 0 0, o0x7f5f671e0078;  0 drivers
+o0x7f5f671e00a8 .functor BUFZ 6, C4<zzzzzz>; HiZ drive
+v0x56436c8d9550_0 .net "instr_op", 5 0, o0x7f5f671e00a8;  0 drivers
+o0x7f5f671e00d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56436c8d9630_0 .net "mem_read", 0 0, o0x7f5f671e00d8;  0 drivers
+o0x7f5f671e0108 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56436c8d96f0_0 .net "mem_to_reg", 0 0, o0x7f5f671e0108;  0 drivers
+o0x7f5f671e0138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56436c8d97b0_0 .net "mem_write", 0 0, o0x7f5f671e0138;  0 drivers
+o0x7f5f671e0168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56436c8d9870_0 .net "reg_dst", 0 0, o0x7f5f671e0168;  0 drivers
+o0x7f5f671e0198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56436c8d9930_0 .net "reg_write", 0 0, o0x7f5f671e0198;  0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "controlUnit.v";

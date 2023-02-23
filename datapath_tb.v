@@ -1,11 +1,11 @@
 //=========================================================================
 // Name & Email must be EXACTLY as in Gradescope roster!
-// Name: 
-// Email: 
+// Name: Nicole Navarro      
+// Email: nnava026@ucr.edu
 // 
-// Assignment name: 
-// Lab section: 
-// TA: 
+// Assignment name: Lab 4 Datapath Control Units
+// Lab section: 021
+// TA: Jincong Lu
 // 
 // I hereby certify that I have not received assistance on this assignment,
 // or used code, from ANY outside source other than the instruction team
@@ -73,8 +73,62 @@ module datapath_tb;
         end
 
         // -------------------------------------------------------
-        // More Control Unit tests jere
+        // More Control Unit tests here
         // -------------------------------------------------------
+
+        $write("\tTest Case 1.2: LW ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b100011;
+        R = { 9'b011110000 }; 
+        #100; // Wait
+        if (R != result) begin
+            $display("failed: Expected: %b, got %b", R, result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 1.3: SW ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b101011;
+        R = { 9'bX1X001000 }; 
+        #100; // Wait
+        if (R != result) begin
+            $display("failed: Expected: %b, got %b", R, result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 1.4: BEQ ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b000100;
+        R = { 9'bX0X000101 }; 
+        #100; // Wait
+        if (R != result) begin
+            $display("failed: Expected: %b, got %b", R, result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        //WE HAVE TO FIGURE OUT IMM VALUES
+        /*
+        $write("\tTest Case 1.5: IMM ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b000000;
+        R = { 9'b100100010 }; 
+        #100; // Wait
+        if (R != result) begin
+            $display("failed: Expected: %b, got %b", R, result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end*/
 
         // -------------------------------------------------------
         // Test group 2: ALU Control Unit
@@ -98,6 +152,123 @@ module datapath_tb;
         // -------------------------------------------------------
         // More ALU Control Unit tests jere
         // -------------------------------------------------------
+
+        //Based on the first test, going with the 2nd chart in README
+        //Funct field is instr_field
+        // instr_op is input op from earlier tests
+        //R_alu is referring to ALU select input
+
+        $write("\tTest Case 2.2: R-type (subtract) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b000000;
+        instr_field = 6'b100010;
+        R_alu = { 4'b0110 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.3: R-type (AND) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b000000;
+        instr_field = 6'b100100;
+        R_alu = { 4'b0000 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.4: R-type (OR) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b000000;
+        instr_field = 6'b100100;
+        R_alu = { 4'b0001 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.5: R-type (NOR) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b000000;
+        instr_field = 6'b100111;
+        R_alu = { 4'b1100 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.6: R-type (Set on less than) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b000000;
+        instr_field = 6'b101010;
+        R_alu = { 4'b0111 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.7: LW (load word)...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b100011;
+        instr_field = 6'bXXXXXX;
+        R_alu = { 4'b0010 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.8: SW (store word) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b101011;
+        instr_field = 6'bXXXXXX;
+        R_alu = { 4'b0010 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.9: BEQ (branch equal) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b000100;
+        instr_field = 6'bXXXXXX;
+        R_alu = { 4'b0010 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
 
         // --------------------------------------------------------------
         // End testing
