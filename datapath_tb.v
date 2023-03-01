@@ -270,6 +270,93 @@ module datapath_tb;
             $display("passed"); 
         end
 
+        //--------------
+
+        $write("\tTest Case 2.10: R-type IMM (add) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b001000;
+        instr_field = 6'b100000;
+        R_alu = { 4'b0010 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.11: R-type IMM (subtract) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b001000;
+        instr_field = 6'b100010;
+        R_alu = { 4'b0110 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.12: R-type IMM (AND) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b001000;
+        instr_field = 6'b100100;
+        R_alu = { 4'b0000 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.13: R-type IMM (OR) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b001000;
+        instr_field = 6'b100100;
+        R_alu = { 4'b0001 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.14: R-type IMM (NOR) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b001000;
+        instr_field = 6'b100111;
+        R_alu = { 4'b1100 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+        $write("\tTest Case 2.15: R-type IMM (Set on less than) ...");
+        totalTests = totalTests + 1;
+        // Set inputs
+        instr_op = 6'b001000;
+        instr_field = 6'b101010;
+        R_alu = { 4'b0111 }; 
+        #100; // Wait
+        if (R_alu !== alu_result) begin
+            $display("failed: Expected: %b, got %b", R_alu, alu_result); 
+            failedTests = failedTests + 1;
+        end else begin
+            $display("passed"); 
+        end
+
+
         // --------------------------------------------------------------
         // End testing
         // --------------------------------------------------------------
