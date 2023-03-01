@@ -26,11 +26,11 @@ module aluControlUnit (
     reg alu_out_reg;
 
     assign alu_out = alu_out_reg;
-
+/*
     controlUnit #() get_op(
         .instr_op(instruction_5_0),
         .alu_op(alu_op));
-    
+    */
     
     always @(*) begin
         casex({alu_op,instruction_5_0})
