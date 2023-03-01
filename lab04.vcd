@@ -1,5 +1,5 @@
 $date
-	Wed Mar  1 00:16:48 2023
+	Wed Mar  1 00:49:21 2023
 $end
 $version
 	Icarus Verilog
@@ -8,12 +8,11 @@ $timescale
 	1ps
 $end
 $scope module aluControlUnit $end
-$var wire 2 ! alu_op [1:0] $end
-$var wire 6 " instruction_5_0 [5:0] $end
-$var wire 4 # alu_out [3:0] $end
+$var wire 6 ! instruction_5_0 [5:0] $end
+$var wire 4 " alu_out [3:0] $end
+$var wire 2 # alu_op [1:0] $end
 $var reg 1 $ alu_out_reg $end
-$upscope $end
-$scope module controlUnit $end
+$scope module get_op $end
 $var wire 1 % alu_src $end
 $var wire 1 & branch $end
 $var wire 6 ' instr_op [5:0] $end
@@ -32,6 +31,7 @@ $var reg 1 3 mem_to_reg_reg $end
 $var reg 1 4 mem_write_reg $end
 $var reg 1 5 reg_dst_reg $end
 $var reg 1 6 reg_write_reg $end
+$upscope $end
 $upscope $end
 $scope module datapath_tb $end
 $var wire 4 7 alu_result [3:0] $end
@@ -76,7 +76,7 @@ bz '
 0%
 0$
 b0 #
-bz "
+b0 "
 bz !
 $end
 #10000

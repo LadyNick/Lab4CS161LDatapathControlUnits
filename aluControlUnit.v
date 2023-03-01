@@ -22,12 +22,14 @@ module aluControlUnit (
 // ------------------------------
 // Insert your solution below
 // ------------------------------ 
+
     reg alu_out_reg;
 
-    //always @(*)begin
     assign alu_out = alu_out_reg;
-    //end
 
+    controlUnit #() get_op(
+        .instr_op(instruction_5_0),
+        .alu_op(alu_op));
 
     always @(*) begin
         casex({alu_op,instruction_5_0})
@@ -43,7 +45,7 @@ module aluControlUnit (
             8'b1XXX0000: begin
                 alu_out_reg = 4'b0110;
             end
-            'b1XXX0010: begin
+            8'b1XXX0010: begin
                 alu_out_reg = 4'b0000;
             end
             8'b1XXX0100:begin

@@ -89,18 +89,16 @@ module controlUnit  (
                 alu_src_reg = 1'b0;
                 reg_write_reg = 1'b0;
             end
-            /*
             6'b001000: begin
-                reg_dst_reg = 
-                branch_reg = 
-                mem_read_reg =
-                mem_to_reg_reg =
-                alu_op_reg =
-                mem_write_reg =
-                alu_src_reg =
-                reg_write_reg = 
+                reg_dst_reg = 1'b1;
+                branch_reg = 1'b0;
+                mem_read_reg = 1'b0;
+                mem_to_reg_reg = 1'b0;
+                alu_op_reg = 2'b10;
+                mem_write_reg = 1'b0;
+                alu_src_reg = 1'b1;
+                reg_write_reg = 1'b1;
             end
-            */
         endcase
 
     end
