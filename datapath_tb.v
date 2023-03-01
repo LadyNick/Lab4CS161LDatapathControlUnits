@@ -120,8 +120,8 @@ module datapath_tb;
         $write("\tTest Case 1.5: IMM ...");
         totalTests = totalTests + 1;
         // Set inputs
-        instr_op = 6'b000000;
-        R = { 9'b100100010 }; 
+        instr_op = 6'b001000;
+        R = { 9'b }; 
         #100; // Wait
         if (R != result) begin
             $display("failed: Expected: %b, got %b", R, result); 
