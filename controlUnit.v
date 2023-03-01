@@ -33,7 +33,7 @@ module controlUnit  (
     reg branch_reg;
     reg mem_read_reg;
     reg mem_to_reg_reg;
-    reg alu_op_reg;
+    reg [1:0] alu_op_reg;
     reg mem_write_reg;
     reg alu_src_reg;
     reg reg_write_reg;
