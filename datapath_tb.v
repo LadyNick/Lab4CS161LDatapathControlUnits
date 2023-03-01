@@ -116,19 +116,19 @@ module datapath_tb;
         end
 
         //WE HAVE TO FIGURE OUT IMM VALUES
-        /*
+        
         $write("\tTest Case 1.5: IMM ...");
         totalTests = totalTests + 1;
         // Set inputs
         instr_op = 6'b001000;
-        R = { 9'b }; 
+        R = { 9'b110100010 }; 
         #100; // Wait
         if (R != result) begin
             $display("failed: Expected: %b, got %b", R, result); 
             failedTests = failedTests + 1;
         end else begin
             $display("passed"); 
-        end*/
+        end
 
         // -------------------------------------------------------
         // Test group 2: ALU Control Unit
