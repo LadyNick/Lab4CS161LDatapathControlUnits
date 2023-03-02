@@ -142,7 +142,7 @@ module datapath_tb;
         totalTests = totalTests + 1;
         // Set inputs
         instr_op = 6'b001000;
-        R = { 9'b110100010 }; 
+        R = { 9'b110100010 };
         #100; // Wait
         if (R !== result) begin
             $display("failed: Expected: %b, got %b", R, result); 

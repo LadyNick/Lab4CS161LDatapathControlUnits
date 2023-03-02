@@ -1,5 +1,5 @@
 $date
-	Thu Mar  2 02:54:00 2023
+	Thu Mar  2 23:33:37 2023
 $end
 $version
 	Icarus Verilog
@@ -25,39 +25,36 @@ $var reg 4 - alu_out_reg [3:0] $end
 $upscope $end
 $scope module connectionscu $end
 $var wire 6 . instr_op [5:0] $end
-$var wire 1 / reg_dst $end
-$var wire 1 0 reg_st $end
-$var wire 1 1 reg_write $end
-$var wire 1 2 mem_write $end
-$var wire 1 3 mem_to_reg $end
-$var wire 1 4 mem_read $end
-$var wire 1 5 branch $end
-$var wire 1 6 alu_src $end
-$var wire 2 7 alu_op [1:0] $end
-$var reg 2 8 alu_op_reg [1:0] $end
-$var reg 1 6 alu_src_reg $end
-$var reg 1 5 branch_reg $end
-$var reg 1 4 mem_read_reg $end
-$var reg 1 3 mem_to_reg_reg $end
-$var reg 1 2 mem_write_reg $end
-$var reg 1 9 reg_dst_reg $end
-$var reg 1 1 reg_write_reg $end
+$var wire 1 / reg_write $end
+$var wire 1 0 reg_dst $end
+$var wire 1 1 mem_write $end
+$var wire 1 2 mem_to_reg $end
+$var wire 1 3 mem_read $end
+$var wire 1 4 branch $end
+$var wire 1 5 alu_src $end
+$var wire 2 6 alu_op [1:0] $end
+$var reg 2 7 alu_op_reg [1:0] $end
+$var reg 1 5 alu_src_reg $end
+$var reg 1 4 branch_reg $end
+$var reg 1 3 mem_read_reg $end
+$var reg 1 2 mem_to_reg_reg $end
+$var reg 1 1 mem_write_reg $end
+$var reg 1 0 reg_dst_reg $end
+$var reg 1 / reg_write_reg $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-x9
-bx 8
 bx 7
-x6
+bx 6
 x5
 x4
 x3
 x2
 x1
 x0
-z/
+x/
 bx .
 bx -
 bx ,
@@ -71,7 +68,7 @@ bx &
 bx $
 bx #
 bx "
-bzxxxxxxxx !
+bx !
 $end
 #10000
 0%
@@ -82,17 +79,16 @@ b10 "
 b10 +
 b10 -
 b10 *
-11
-06
-02
+1/
+05
+01
+b10 6
 b10 7
-b10 8
+02
 03
 04
-bz00100010 !
-05
+b100100010 !
 10
-19
 b100100010 #
 b0 '
 b0 .
@@ -118,20 +114,18 @@ b1 )
 1%
 #130000
 b0 *
-16
+15
+b0 6
 b0 7
-b0 8
+12
 13
-bz11110000 !
-14
+b11110000 !
 00
-09
 0%
 b11110000 #
 b100011 '
 b100011 .
 b10 )
-b1 (
 #140000
 1%
 #150000
@@ -151,19 +145,17 @@ b1 (
 #220000
 1%
 #230000
-01
-12
-x3
-bz1x001000 !
-04
+0/
+11
+x2
+03
+bx1x001000 !
 x0
-x9
 0%
 bx1x001000 #
 b101011 '
 b101011 .
 b11 )
-b10 (
 #240000
 1%
 #250000
@@ -187,15 +179,17 @@ b110 "
 b110 +
 b110 -
 b1 *
-bz1x001001 !
+05
+01
+b1 6
 b1 7
-b1 8
+bx0x000101 !
+14
 0%
 bx0x000101 #
 b100 '
 b100 .
 b100 )
-b11 (
 #340000
 1%
 #350000
@@ -219,20 +213,19 @@ b10 "
 b10 +
 b10 -
 b10 *
-11
-02
+1/
+15
+b10 6
 b10 7
-b10 8
-bz10100010 !
-03
+02
+04
+b110100010 !
 10
-19
 0%
 b110100010 #
 b1000 '
 b1000 .
 b101 )
-b100 (
 #440000
 1%
 #450000
@@ -252,8 +245,8 @@ b100 (
 #520000
 1%
 #530000
-bz00100010 !
-06
+b100100010 !
+05
 0%
 b10 $
 b100000 &
@@ -261,7 +254,6 @@ b100000 ,
 b0 '
 b0 .
 b110 )
-b101 (
 #540000
 1%
 #550000
@@ -420,14 +412,13 @@ b0 *
 b10 "
 b10 +
 b10 -
-16
+15
+b0 6
 b0 7
-b0 8
+12
 13
-bz11110000 !
-14
+b11110000 !
 00
-09
 0%
 b10 $
 bx &
@@ -454,13 +445,12 @@ b1100 )
 #1220000
 1%
 #1230000
-01
-12
-x3
-bz1x001000 !
-04
+0/
+11
+x2
+03
+bx1x001000 !
 x0
-x9
 0%
 b101011 '
 b101011 .
@@ -488,9 +478,12 @@ b110 "
 b110 +
 b110 -
 b1 *
-bz1x001001 !
+05
+01
+b1 6
 b1 7
-b1 8
+bx0x000101 !
+14
 0%
 b110 $
 b100 '
@@ -519,14 +512,14 @@ b10 "
 b10 +
 b10 -
 b10 *
-11
-02
+1/
+15
+b10 6
 b10 7
-b10 8
-bz10100010 !
-03
+02
+04
+b110100010 !
 10
-19
 0%
 b10 $
 b100000 &

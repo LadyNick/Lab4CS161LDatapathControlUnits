@@ -38,7 +38,7 @@ module controlUnit  (
     reg alu_src_reg;
     reg reg_write_reg;
 
-    assign reg_st = reg_dst_reg;
+    assign reg_dst = reg_dst_reg;
     assign branch = branch_reg;
     assign mem_read = mem_read_reg;
     assign mem_to_reg = mem_to_reg_reg;
@@ -81,12 +81,12 @@ module controlUnit  (
             end
             6'b000100: begin
                 reg_dst_reg = 1'bX;
-                branch_reg = 1'b0;
+                branch_reg = 1'b1;
                 mem_read_reg = 1'b0;
                 mem_to_reg_reg = 1'bX;
                 alu_op_reg = 2'b01;
-                mem_write_reg = 1'b1;
-                alu_src_reg = 1'b1;
+                mem_write_reg = 1'b0;
+                alu_src_reg = 1'b0;
                 reg_write_reg = 1'b0;
             end
             6'b001000: begin
