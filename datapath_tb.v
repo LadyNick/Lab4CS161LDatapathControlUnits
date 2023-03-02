@@ -39,7 +39,28 @@ module datapath_tb;
     // ---------------------------------------------------
     // Instantiate the Units Under Test (UUT)
     // --------------------------------------------------- 
-    
+
+    wire [1:0] alu_op_out;
+
+    controlUnit #() connectionscu(
+        .instr_op(instr_op),
+        .reg_dst(result[8]),
+        .alu_src(result[7]),
+        .mem_to_reg(result[6]),
+        .reg_write(result[5]),
+        .mem_read(result[4]),
+        .mem_write(result[3]),
+        .branch(result[2]),
+        .alu_op(result[1:0])
+    );
+
+    aluControlUnit #() connectionsacu(
+        .alu_op(result[1:0]),
+        .instruction_5_0(instr_field),
+        .alu_out(alu_result)
+    );
+
+
     initial begin 
         clk = 0;
         forever begin 
@@ -65,7 +86,7 @@ module datapath_tb;
         instr_op = 6'b000000;
         R = { 9'b100100010 }; 
         #100; // Wait
-        if (R != result) begin
+        if (R !== result) begin
             $display("failed: Expected: %b, got %b", R, result); 
             failedTests = failedTests + 1;
         end else begin
@@ -82,7 +103,7 @@ module datapath_tb;
         instr_op = 6'b100011;
         R = { 9'b011110000 }; 
         #100; // Wait
-        if (R != result) begin
+        if (R !== result) begin
             $display("failed: Expected: %b, got %b", R, result); 
             failedTests = failedTests + 1;
         end else begin
@@ -95,7 +116,7 @@ module datapath_tb;
         instr_op = 6'b101011;
         R = { 9'bX1X001000 }; 
         #100; // Wait
-        if (R != result) begin
+        if (R !== result) begin
             $display("failed: Expected: %b, got %b", R, result); 
             failedTests = failedTests + 1;
         end else begin
@@ -108,7 +129,7 @@ module datapath_tb;
         instr_op = 6'b000100;
         R = { 9'bX0X000101 }; 
         #100; // Wait
-        if (R != result) begin
+        if (R !== result) begin
             $display("failed: Expected: %b, got %b", R, result); 
             failedTests = failedTests + 1;
         end else begin
@@ -123,7 +144,7 @@ module datapath_tb;
         instr_op = 6'b001000;
         R = { 9'b110100010 }; 
         #100; // Wait
-        if (R != result) begin
+        if (R !== result) begin
             $display("failed: Expected: %b, got %b", R, result); 
             failedTests = failedTests + 1;
         end else begin

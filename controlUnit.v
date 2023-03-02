@@ -48,7 +48,7 @@ module controlUnit  (
     assign reg_write = reg_write_reg;
 
     always @(*) begin
-        casex(instr_op)
+        case(instr_op)
             6'b000000: begin
                 reg_dst_reg = 1'b1;
                 branch_reg = 1'b0;
@@ -77,7 +77,7 @@ module controlUnit  (
                 alu_op_reg = 2'b00;
                 mem_write_reg = 1'b1;
                 alu_src_reg = 1'b1;
-                reg_write_reg = 1'b1;
+                reg_write_reg = 1'b0;
             end
             6'b000100: begin
                 reg_dst_reg = 1'bX;
