@@ -81,12 +81,12 @@ module controlUnit  (
             end
             6'b000100: begin
                 reg_dst_reg = 1'bX;
-                branch_reg = 1'b1;
+                branch_reg = 1'b0;
                 mem_read_reg = 1'b0;
                 mem_to_reg_reg = 1'bX;
                 alu_op_reg = 2'b01;
-                mem_write_reg = 1'b0;
-                alu_src_reg = 1'b0;
+                mem_write_reg = 1'b1;
+                alu_src_reg = 1'b1;
                 reg_write_reg = 1'b0;
             end
             6'b001000: begin

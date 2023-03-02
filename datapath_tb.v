@@ -211,7 +211,7 @@ module datapath_tb;
         totalTests = totalTests + 1;
         // Set inputs
         instr_op = 6'b000000;
-        instr_field = 6'b100100;
+        instr_field = 6'b100101;
         R_alu = { 4'b0001 }; 
         #100; // Wait
         if (R_alu !== alu_result) begin
@@ -282,7 +282,7 @@ module datapath_tb;
         // Set inputs
         instr_op = 6'b000100;
         instr_field = 6'bXXXXXX;
-        R_alu = { 4'b0010 }; 
+        R_alu = { 4'b0110 }; 
         #100; // Wait
         if (R_alu !== alu_result) begin
             $display("failed: Expected: %b, got %b", R_alu, alu_result); 
@@ -339,7 +339,7 @@ module datapath_tb;
         totalTests = totalTests + 1;
         // Set inputs
         instr_op = 6'b001000;
-        instr_field = 6'b100100;
+        instr_field = 6'b100101;
         R_alu = { 4'b0001 }; 
         #100; // Wait
         if (R_alu !== alu_result) begin
@@ -388,3 +388,16 @@ module datapath_tb;
     end
 endmodule
 
+//------For case study & notes 3/1
+// tar xvf sf case_study.tar.gz
+// cd study/
+// ls
+// bash: make: command not found
+// apt update && apt install -y build-essential
+// make
+// ls
+//run program from 100 to 30,000 ...
+//    time ./prog0.out 100    .... then he tried 1000 so on
+// o(n^2), different entries exist in different pages, you have to be constantly loading and reading and writing and so on
+// we have to take a 2 dimensional object and put it into a 1 dimensional object RAM
+// memory access patterns
