@@ -6,11 +6,11 @@ Testbench Explanations:
 All test benches are based on the tables below. I had to make changes often to the testbench as well as to the code because I realized some of my bit values were wrong and I guess I was getting confused with all the 1's and 0's so I lost track of which ones are supposed to be 1's and which 0's. Then at some point I had I forgot to put a d for spelling reg_dst and that was causing me to fail tests but I fixed it.
 
 Table 1:
-!(cs16141) [cs16141.PNG]
+![cs16141](cs16141.PNG)
 Table 2:
-!(cs16142) [cs16142.PNG]
+![cs16142](cs16142.PNG)
 Tables 3:
-!(cs16143) [cs16143.PNG]
+![cs16143](cs16143.PNG)
 
 Section 1 tests the control unit.
 Section 2 tests the alu control unit.
@@ -82,8 +82,8 @@ Waveform:
 
 
 Case Study Data:
-!(cs161411) [cs161411.PNG]
+![cs161411](cs161411.PNG)
 
-!(cs161422) [cs161422.PNG]
+![cs161422](cs161422.PNG)
 
-!(cs161433) [cs161433.PNG]
+![cs161433](cs161433.PNG)
