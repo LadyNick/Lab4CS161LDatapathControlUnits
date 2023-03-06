@@ -401,3 +401,41 @@ endmodule
 // o(n^2), different entries exist in different pages, you have to be constantly loading and reading and writing and so on
 // we have to take a 2 dimensional object and put it into a 1 dimensional object RAM
 // memory access patterns
+
+//data for prog0
+/*
+        real        user         sys
+100     0m0.002s    0m0.001s     0m0.000s
+300     0.003       0.002           0.000
+500     0.004       0.004       0.000
+1000    0.020
+3000    0.087
+5000    0.242
+10000   0.954
+20000   1.915
+22000   1.655
+seg fault for these 2 
+25000   0.132
+30000   0.131
+*/
+
+
+//data for prog1
+/* just real
+
+100     0.009
+300     0.004
+500     0.006
+1000    0.015
+3000    0.096
+5000    0.303
+10000   2.711
+20000   1.650
+22000   1.708
+25000   0.118
+30000   0.121
+
+*/
+
+
+
