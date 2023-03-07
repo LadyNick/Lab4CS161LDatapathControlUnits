@@ -84,6 +84,7 @@ Section 2 tests the alu control unit.
 
 Waveform:
 
+![cs161lab4waveform](cs161lab4waveform.PNG)
 
 
 
@@ -94,3 +95,5 @@ Case Study Data:
 ![cs161422](cs161422.PNG)
 
 ![cs161433](cs161433.PNG)
+
+
